@@ -1,0 +1,6 @@
+{
+    "require": {
+        "kristapsk/php-coindesk-api": "^1.0",
+        "filp/whoops": "^2.11"
+    }
+}
