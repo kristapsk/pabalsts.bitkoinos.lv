@@ -13,6 +13,7 @@ class ComposerStaticInit523d708d2204a2d0ae31d10ba6d04ab3
         ),
         'W' => 
         array (
+            'Wruczek\\PhpFileCache\\' => 21,
             'Whoops\\' => 7,
         ),
         'P' => 
@@ -25,6 +26,10 @@ class ComposerStaticInit523d708d2204a2d0ae31d10ba6d04ab3
         'kristapsk\\CoinDesk\\' => 
         array (
             0 => __DIR__ . '/..' . '/kristapsk/php-coindesk-api/src',
+        ),
+        'Wruczek\\PhpFileCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wruczek/php-file-cache/src',
         ),
         'Whoops\\' => 
         array (

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'kristapsk\\CoinDesk\\' => array($vendorDir . '/kristapsk/php-coindesk-api/src'),
+    'Wruczek\\PhpFileCache\\' => array($vendorDir . '/wruczek/php-file-cache/src'),
     'Whoops\\' => array($vendorDir . '/filp/whoops/src/Whoops'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
 );

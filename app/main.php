@@ -3,12 +3,19 @@
 include 'inc.header.php';
 
 use kristapsk\CoinDesk\BPI;
+use Wruczek\PhpFileCache\PhpFileCache;
 
 date_default_timezone_set('Europe/Riga');
 
+$cache = new PhpFileCache($base_path . 'cache');
+
 $initialSumEUR = 500;
 
-$currentBTCPrice = BPI::currentPrice('EUR');
+//$currentBTCPrice = BPI::currentPrice('EUR');
+$currentBTCPrice = $cache->refreshIfExpired('currentPrice', function() {
+    return BPI::currentPrice('EUR');
+}, 60);
+
 $currentSatsPerEUR = 100000000 / $currentBTCPrice;
 
 $historicalBTCPrices = [
@@ -63,7 +70,7 @@ $historicalBTCPrices = [
                     echo '<span>=';
                 }
                 else {
-                    echo '<span class="text-danger">-';
+                    echo '<span class="text-danger">';
                 }
             ?> <?php echo number_format($diff, 2), ' EUR (', number_format($diffPercent, 2), '%)'; ?></span></td>
             <td><?php

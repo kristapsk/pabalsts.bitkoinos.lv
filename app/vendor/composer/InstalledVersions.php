@@ -25,16 +25,25 @@ class InstalledVersions
     private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'kristapsk/pabalsts.bitkoinos.lv',
+    'reference' => '4a3a391f31e3907aa9ef259449fcd9347b629370',
+    'name' => '__root__',
   ),
   'versions' => 
   array (
+    '__root__' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4a3a391f31e3907aa9ef259449fcd9347b629370',
+    ),
     'filp/whoops' => 
     array (
       'pretty_version' => '2.11.0',
@@ -43,15 +52,6 @@ class InstalledVersions
       array (
       ),
       'reference' => 'f6e14679f948d8a5cfb866fa7065a30c66bd64d3',
-    ),
-    'kristapsk/pabalsts.bitkoinos.lv' => 
-    array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
     ),
     'kristapsk/php-coindesk-api' => 
     array (
@@ -70,6 +70,15 @@ class InstalledVersions
       array (
       ),
       'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
+    ),
+    'wruczek/php-file-cache' => 
+    array (
+      'pretty_version' => '0.0.5',
+      'version' => '0.0.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '83b0da10bc4cbf03fcc6f593abe7bfb663719902',
     ),
   ),
 );

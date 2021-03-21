@@ -1,6 +1,7 @@
 {
     "require": {
         "kristapsk/php-coindesk-api": "^1.0",
-        "filp/whoops": "^2.11"
+        "filp/whoops": "^2.11",
+        "wruczek/php-file-cache": "^0.0.5"
     }
 }
