@@ -93,7 +93,7 @@ $historicalBTCPrices = [
     </tbody>
 </table>
 
-<p>Autors: <a href="https://github.com/kristapsk">Kristaps Kaupe</a>.</p>
+<p>Autors: <a href="https://twitter.com/kristapsk">Kristaps Kaupe</a>. Pirmkods: <a href="https://github.com/kristapsk/pabalsts.bitkoinos.lv">GitHub</a>.</p>
 
 </div>
 
