@@ -2,7 +2,7 @@
 
 include 'inc.header.php';
 
-use kristapsk\CoinDesk\BPI;
+use Codenixsv\CoinGeckoApi\CoinGeckoClient;
 use Wruczek\PhpFileCache\PhpFileCache;
 
 date_default_timezone_set('Europe/Riga');
@@ -11,9 +11,10 @@ $cache = new PhpFileCache($base_path . 'cache');
 
 $initialSumEUR = 500;
 
-//$currentBTCPrice = BPI::currentPrice('EUR');
 $currentBTCPrice = $cache->refreshIfExpired('currentPrice', function() {
-    return BPI::currentPrice('EUR');
+    $client = new CoinGeckoClient();
+    $data = $client->simple()->getPrice('bitcoin', 'eur');
+    return $data['bitcoin']['eur'];
 }, 60);
 
 $currentSatsPerEUR = 100000000 / $currentBTCPrice;
@@ -39,7 +40,7 @@ $historicalBTCPrices = [
 
 <p>Kāda būtu valsts vienreizējā 500 EUR pabalsta par katru bērnu tagadējā vērtība, ja saņemšanas dienā tas tiktu konvertēts uz Bitcoin.</p>
 
-<p>Šobrīd (<?php echo date('d.m.Y \p\lk\s\t. H.i'); ?>) 1 BTC = <?php echo number_format($currentBTCPrice, 2); ?> EUR (Powered by <a href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>). Bitcoin kurss te ir aptuvens, tas atšķiras atkarībā no izmantotās biržas vai brokera, netiek arī ierēķinātas pirkšanas un pārdošanas komisijas. Summa pēc IIN ir noņemot 20% no VID ieskatā fiksētās peļņas, ja BTC tiek pārdots pret EUR, par ko ir jānomaksā IIN par kapitāla pieaugumu (papildus informācijai par nodokļiem skat. <a href="https://www.vid.gov.lv/lv/fiziskas-personas-darbibas-ar-kriptovalutam">informāciju VID mājaslapā</a>).</p>
+<p>Šobrīd (<?php echo date('d.m.Y \p\lk\s\t. H.i'); ?>) 1 BTC = <?php echo number_format($currentBTCPrice, 2); ?> EUR (dati no <a href="https://www.coingecko.com/">coingecko</a>). Bitcoin kurss te ir aptuvens, tas atšķiras atkarībā no izmantotās biržas vai brokera, netiek arī ierēķinātas pirkšanas un pārdošanas komisijas. Summa pēc IIN ir noņemot 20% no VID ieskatā fiksētās peļņas, ja BTC tiek pārdots pret EUR, par ko ir jānomaksā IIN par kapitāla pieaugumu (papildus informācijai par nodokļiem skat. <a href="https://www.vid.gov.lv/lv/fiziskas-personas-darbibas-ar-kriptovalutam">informāciju VID mājaslapā</a>).</p>
 
 <p>Bitcoin ir iespējams iegādāties daudz un dažādos veidos, viens variants ir <a href="https://hodlhodl.com/join/Y5OI">HodlHodl</a>, kas ir platforma, kas ļauj pirkt un pārdod Bitcoin no citām privātpersonām (reģistrējoties neprasa pases datus).</p>
 
